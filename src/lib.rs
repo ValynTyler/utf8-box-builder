@@ -1,3 +1,5 @@
+pub mod grid;
+
 pub const HL: char = '─';
 pub const VL: char = '│';
 
