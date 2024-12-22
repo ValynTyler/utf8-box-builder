@@ -1,7 +1,22 @@
 use core::fmt::Debug;
 use std::fmt::Display;
+use std::fmt::Write;
 
 use crate::*;
+
+fn format_row<T, U> (values: &Vec<T>, filler: U, left_terminator: U, right_terminator: U) -> Result<String, std::fmt::Error>
+where T: Display, U: Display {
+    let mut out = String::new();
+    write!(out, "{}", left_terminator)?;
+    let mut middle = String::new();
+    values
+        .iter()
+        .map(|item| write!(middle, "{}{}", filler, item))
+        .collect::<Result<Vec<_>, _>>()?;
+    write!(out, "{}{}", middle, filler)?;
+    write!(out, "{}", right_terminator)?;
+    Ok(out)
+}
 
 pub struct Grid<T>(pub Vec<Vec<T>>);
 
@@ -37,27 +52,20 @@ where T: Debug {
 impl<T> Display for Grid<T>
 where T: Display {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let empty_row = vec!['-'; self.0[0].len()];
+
         // top row
-        write!(f, "{TLC}{HL}")?;
-        let res: Result<Vec<_>, _> = self.0[0].iter().map(|_| write!(f, "{HL}{HL}")).collect();
-        res?;
-        writeln!(f, "{TRC}")?;
+        let top_row = format_row(&empty_row, HL, TLC, TRC)?;
+        writeln!(f, "{}", top_row)?;
 
         // middle rows
         let _: Result<Vec<_>, _> = self.0.iter().map(|row| {
-            write!(f, "{VL} ")?;
-            let res: Result<Vec<_>, _> = row.iter().map(|item| {
-                write!(f, "{item} ")
-            }).collect();
-            res?;
-            writeln!(f, "{VL}")
-        }).collect();
+            writeln!(f, "{}", format_row(row, ' ', '|', '|')?)
+        }).collect::<Result<Vec<_>, _>>();
 
         // bottom row
-        write!(f, "{BLC}{HL}")?;
-        let res: Result<Vec<_>, _> = self.0[0].iter().map(|_| write!(f, "{HL}{HL}")).collect();
-        res?;
-        write!(f, "{BRC}")?;
+        let bottom_row = format_row(&empty_row, HL, BLC, BRC)?;
+        writeln!(f, "{}", bottom_row)?;
 
         Ok(())
     }
