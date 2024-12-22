@@ -52,7 +52,7 @@ where T: Debug {
 impl<T> Display for Grid<T>
 where T: Display {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let empty_row = vec!['-'; self.0[0].len()];
+        let empty_row = vec![HL; self.0[0].len()];
 
         // top row
         let top_row = format_row(&empty_row, HL, TLC, TRC)?;
@@ -60,12 +60,12 @@ where T: Display {
 
         // middle rows
         let _: Result<Vec<_>, _> = self.0.iter().map(|row| {
-            writeln!(f, "{}", format_row(row, ' ', '|', '|')?)
+            writeln!(f, "{}", format_row(row, ' ', VL, VL)?)
         }).collect::<Result<Vec<_>, _>>();
 
         // bottom row
         let bottom_row = format_row(&empty_row, HL, BLC, BRC)?;
-        writeln!(f, "{}", bottom_row)?;
+        write!(f, "{}", bottom_row)?;
 
         Ok(())
     }
