@@ -5,7 +5,7 @@ pub struct ThreeSliceLine {
 }
 
 impl ThreeSliceLine {
-    pub fn render(&self, length: u32) -> String {
+    pub fn render(&self, length: u16) -> String {
         self.left_end().to_string()
         + &self.center().to_string().repeat((length - 2) as usize)
         + &self.right_end().to_string()

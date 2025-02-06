@@ -15,7 +15,7 @@ pub struct NineSliceBox {
 }
 
 impl NineSliceBox {
-    pub fn render(&self, width: u32, height: u32) -> String {
+    pub fn render(&self, width: u16, height: u16) -> String {
         match width >= 2 && height >= 2 {
             false => String::new(),
             true => {
