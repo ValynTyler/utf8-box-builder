@@ -24,10 +24,10 @@ impl<T> Debug for Grid<T>
 where T: Debug {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         // top row
-        write!(f, "{TLC}{HL}")?;
+        write!(f, "{TL}{HL}")?;
         let res: Result<Vec<_>, _> = self.0[0].iter().map(|_| write!(f, "{HL}{HL}")).collect();
         res?;
-        writeln!(f, "{TRC}")?;
+        writeln!(f, "{TR}")?;
 
         // middle rows
         let _: Result<Vec<_>, _> = self.0.iter().map(|row| {
@@ -40,10 +40,10 @@ where T: Debug {
         }).collect();
 
         // bottom row
-        write!(f, "{BLC}{HL}")?;
+        write!(f, "{BL}{HL}")?;
         let res: Result<Vec<_>, _> = self.0[0].iter().map(|_| write!(f, "{HL}{HL}")).collect();
         res?;
-        write!(f, "{BRC}")?;
+        write!(f, "{BR}")?;
 
         Ok(())
     }
@@ -55,7 +55,7 @@ where T: Display {
         let empty_row = vec![HL; self.0[0].len()];
 
         // top row
-        let top_row = format_row(&empty_row, HL, TLC, TRC)?;
+        let top_row = format_row(&empty_row, HL, TL, TR)?;
         writeln!(f, "{}", top_row)?;
 
         // middle rows
@@ -64,7 +64,7 @@ where T: Display {
         }).collect::<Result<Vec<_>, _>>();
 
         // bottom row
-        let bottom_row = format_row(&empty_row, HL, BLC, BRC)?;
+        let bottom_row = format_row(&empty_row, HL, BL, BR)?;
         write!(f, "{}", bottom_row)?;
 
         Ok(())
