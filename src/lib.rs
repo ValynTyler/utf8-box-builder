@@ -1,4 +1,4 @@
-use nine_slice::NineSlice;
+use nine_slice::NineSliceBox;
 
 pub mod grid;
 pub mod nine_slice;
@@ -12,7 +12,7 @@ pub const BL: char = '└';
 pub const TR: char = '┐';
 pub const BR: char = '┘';
 
-pub const UTF_BOX: NineSlice = NineSlice {
+pub const UTF_BOX: NineSliceBox = NineSliceBox {
     _1: '┌',
     _2: '─',
     _3: '┐',

@@ -1,4 +1,4 @@
-pub struct NineSlice {
+pub struct NineSliceBox {
     pub _1: char,
     pub _2: char,
     pub _3: char,
