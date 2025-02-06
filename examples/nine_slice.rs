@@ -1,5 +1,5 @@
-use utf8_box_builder::UTF_BOX;
+use utf8_box_builder::MIXED_BOX;
 
 fn main() {
-    println!("{}", UTF_BOX.render(20, 5));
+    println!("{}", MIXED_BOX.render(50, 10));
 }
