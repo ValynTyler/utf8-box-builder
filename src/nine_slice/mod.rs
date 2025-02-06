@@ -23,8 +23,8 @@ impl NineSliceBox {
                 let mid = ThreeSliceLine { _1: self._4, _2: self._5, _3: self._6 };
                 let bot = ThreeSliceLine { _1: self._7, _2: self._8, _3: self._9 };
 
-                top.render(width) + "\n"
-                + &(mid.render(width) + "\n").repeat((height - 2) as usize)
+                top.render(width) + "\r\n"
+                + &(mid.render(width) + "\r\n").repeat((height - 2) as usize)
                 + &(bot.render(width))
             }
         }
