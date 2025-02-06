@@ -2,6 +2,7 @@ use nine_slice::NineSlice;
 
 pub mod grid;
 pub mod nine_slice;
+pub mod three_slice;
 
 pub const HL: char = '─';
 pub const VL: char = '│';
