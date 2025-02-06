@@ -1,3 +1,7 @@
+use std::fmt::Write;
+
+use crate::three_slice::ThreeSliceLine;
+
 pub struct NineSliceBox {
     pub _1: char,
     pub _2: char,
@@ -9,7 +13,23 @@ pub struct NineSliceBox {
     pub _8: char,
     pub _9: char,
 }
+
 impl NineSliceBox {
+    pub fn render(&self, width: u32, height: u32) -> String {
+        match width >= 2 && height >= 2 {
+            false => String::new(),
+            true => {
+                let top = ThreeSliceLine { _1: self._1, _2: self._2, _3: self._3 };
+                let mid = ThreeSliceLine { _1: self._4, _2: self._5, _3: self._6 };
+                let bot = ThreeSliceLine { _1: self._7, _2: self._8, _3: self._9 };
+
+                top.render(width) + "\n"
+                + &(mid.render(width) + "\n").repeat((height - 2) as usize)
+                + &(bot.render(width))
+            }
+        }
+    }
+
     pub fn top_left(&self)      -> char { self._1 }
     pub fn top_middle(&self)    -> char { self._2 }
     pub fn top_right(&self)     -> char { self._3 }
