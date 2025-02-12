@@ -3,14 +3,6 @@ use nine_slice::NineSliceBox;
 pub mod nine_slice;
 pub mod three_slice;
 
-pub const HL: char = '─';
-pub const VL: char = '│';
-
-pub const TL: char = '┌';
-pub const BL: char = '└';
-pub const TR: char = '┐';
-pub const BR: char = '┘';
-
 pub const UNICODE_BOX: NineSliceBox = NineSliceBox {
     _1: '┌',
     _2: '─',
