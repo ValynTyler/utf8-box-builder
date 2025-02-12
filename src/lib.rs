@@ -1,28 +1,25 @@
-use nine_slice::NineSliceBox;
+pub mod scalable;
 
-pub mod nine_slice;
-pub mod three_slice;
+// pub const UNICODE_BOX: NineSliceBox = NineSliceBox {
+//     _1: '┌',
+//     _2: '─',
+//     _3: '┐',
+//     _4: '│',
+//     _5: ' ',
+//     _6: '│',
+//     _7: '└',
+//     _8: '─',
+//     _9: '┘',
+// };
 
-pub const UNICODE_BOX: NineSliceBox = NineSliceBox {
-    _1: '┌',
-    _2: '─',
-    _3: '┐',
-    _4: '│',
-    _5: ' ',
-    _6: '│',
-    _7: '└',
-    _8: '─',
-    _9: '┘',
-};
-
-pub const MIXED_BOX: NineSliceBox = NineSliceBox {
-    _1: '┌',
-    _2: '─',
-    _3: '┐',
-    _4: '|',
-    _5: ' ',
-    _6: '|',
-    _7: '└',
-    _8: '─',
-    _9: '┘',
-};
+// pub const MIXED_BOX: NineSliceBox = NineSliceBox {
+//     _1: '┌',
+//     _2: '─',
+//     _3: '┐',
+//     _4: '|',
+//     _5: ' ',
+//     _6: '|',
+//     _7: '└',
+//     _8: '─',
+//     _9: '┘',
+// };

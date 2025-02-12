@@ -1,11 +1,14 @@
-use unicode_box_builder::three_slice::ThreeSliceLine;
+use unicode_box_builder::scalable::{line::ScalableLine, three_slice::ThreeSlice};
 
 fn main() {
-    let rod = ThreeSliceLine {
-        _1: 'x',
-        _2: '-',
-        _3: 'x',
+    let line = ScalableLine {
+        length: 10,
+        three_slice: ThreeSlice {
+            _1: 'x',
+            _2: '-',
+            _3: 'x',
+        },
     };
 
-    println!("{}", rod.render(5));
+    println!("{}", line);
 }

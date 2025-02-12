@@ -1,6 +1,6 @@
 use std::fmt::Write;
 
-use crate::three_slice::ThreeSliceLine;
+use crate::three_slice::ThreeSlice;
 
 pub struct NineSliceBox {
     pub _1: char,
