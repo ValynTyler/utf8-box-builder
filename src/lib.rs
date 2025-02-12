@@ -1,6 +1,5 @@
 use nine_slice::NineSliceBox;
 
-pub mod grid;
 pub mod nine_slice;
 pub mod three_slice;
 
