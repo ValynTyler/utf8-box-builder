@@ -1,5 +1,21 @@
-// use unicode_box_builder::MIXED_BOX;
+use unicode_box_builder::scalable::{nine_slice::NineSlice, rect::ScalableRect};
+
+pub const UNICODE_BOX: ScalableRect = ScalableRect {
+    width: 50,
+    height: 10,
+    nine_slice: NineSlice {
+        _1: '┌',
+        _2: '─',
+        _3: '┐',
+        _4: '│',
+        _5: ' ',
+        _6: '│',
+        _7: '└',
+        _8: '─',
+        _9: '┘',
+    }
+};
 
 fn main() {
-    // println!("{}", MIXED_BOX.render(50, 10));
+    println!("{}", UNICODE_BOX);
 }
