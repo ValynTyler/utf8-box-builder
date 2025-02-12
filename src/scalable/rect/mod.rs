@@ -1,6 +1,7 @@
 use std::fmt::Display;
 
 use nslice::{nine_slice::NineSlice, three_slice::ThreeSlice};
+use tui_renderer::terminal::canvas::Canvas;
 
 use crate::scalable::line::ScalableLine;
 
@@ -20,6 +21,15 @@ impl ScalableRect {
     pub fn bottom_left(&self)   -> char { self.nine_slice._7 }
     pub fn bottom_middle(&self) -> char { self.nine_slice._8 }
     pub fn bottom_right(&self)  -> char { self.nine_slice._9 }
+}
+
+impl From::<ScalableRect> for Canvas {
+    fn from(value: ScalableRect) -> Self {
+        value
+            .to_string()
+            .as_str()
+            .into()
+    }
 }
 
 impl Display for ScalableRect {
