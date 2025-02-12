@@ -1,5 +1,5 @@
 [package]
-name = "utf8-box-builder"
+name = "unicode-box-builder"
 version = "0.1.0"
 edition = "2021"
 

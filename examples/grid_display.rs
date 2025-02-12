@@ -1,4 +1,4 @@
-use utf8_box_builder::grid::Grid;
+use unicode_box_builder::grid::Grid;
 
 fn main() {
     let grid = Grid(vec![
