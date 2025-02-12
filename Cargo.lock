@@ -3,5 +3,13 @@
 version = 3
 
 [[package]]
+name = "tui-renderer"
+version = "0.1.0"
+source = "git+https://github.com/ValynTyler/tui-renderer.git#c5c59e2735caa561229727f4fe5e184dc875ee6d"
+
+[[package]]
 name = "unicode-box-builder"
 version = "0.1.0"
+dependencies = [
+ "tui-renderer",
+]
