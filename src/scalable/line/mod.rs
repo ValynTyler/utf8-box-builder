@@ -1,6 +1,6 @@
 use std::fmt::Display;
 
-use super::three_slice::ThreeSlice;
+use nslice::three_slice::ThreeSlice;
 
 pub struct ScalableLine {
     pub length: usize,

@@ -3,6 +3,11 @@
 version = 3
 
 [[package]]
+name = "nslice"
+version = "0.1.0"
+source = "git+https://github.com/ValynTyler/nslice-rs.git#3618f07e2c0a3073c8e2773b628b9e09f82af4fb"
+
+[[package]]
 name = "tui-renderer"
 version = "0.1.0"
 source = "git+https://github.com/ValynTyler/tui-renderer.git#c5c59e2735caa561229727f4fe5e184dc875ee6d"
@@ -11,5 +16,6 @@ source = "git+https://github.com/ValynTyler/tui-renderer.git#c5c59e2735caa561229
 name = "unicode-box-builder"
 version = "0.1.0"
 dependencies = [
+ "nslice",
  "tui-renderer",
 ]

@@ -1,6 +1,8 @@
 use std::fmt::Display;
 
-use crate::scalable::{line::ScalableLine, nine_slice::NineSlice, three_slice::ThreeSlice};
+use nslice::{nine_slice::NineSlice, three_slice::ThreeSlice};
+
+use crate::scalable::line::ScalableLine;
 
 pub struct ScalableRect {
     pub width: usize,

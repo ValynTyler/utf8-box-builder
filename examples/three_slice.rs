@@ -1,4 +1,5 @@
-use unicode_box_builder::scalable::{line::ScalableLine, three_slice::ThreeSlice};
+use nslice::three_slice::ThreeSlice;
+use unicode_box_builder::scalable::line::ScalableLine;
 
 fn main() {
     let line = ScalableLine {

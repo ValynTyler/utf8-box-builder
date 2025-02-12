@@ -5,3 +5,4 @@ edition = "2021"
 
 [dependencies]
 tui-renderer = { git = "https://github.com/ValynTyler/tui-renderer.git" }
+nslice = { git = "https://github.com/ValynTyler/nslice-rs.git" }

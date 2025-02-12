@@ -1,4 +1,5 @@
-use unicode_box_builder::scalable::{nine_slice::NineSlice, rect::ScalableRect};
+use nslice::nine_slice::NineSlice;
+use unicode_box_builder::scalable::rect::ScalableRect;
 
 pub const UNICODE_BOX: ScalableRect = ScalableRect {
     width: 50,
